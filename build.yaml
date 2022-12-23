@@ -1,0 +1,9 @@
+
+builders:
+  http_api:
+    import: "package:http_api_generator/generator/builder.dart"
+    builder_factories: ["httpApiBuilder"]
+    build_extensions: { ".dart": [".http_api.g.dart"] }
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
