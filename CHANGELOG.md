@@ -10,3 +10,4 @@
 
 ## 1.0.3
 * Update to analyzer 5. 
+* Upload project to Github.

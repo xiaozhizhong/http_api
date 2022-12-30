@@ -1,6 +1,7 @@
 name: http_api_generator
 description: A package that help you to generate Http Restful Api by annotation.
 version: 1.0.3
+homepage: https://github.com/xiaozhizhong/http_api
 
 environment:
   sdk: ">=2.18.0 <3.0.0"
