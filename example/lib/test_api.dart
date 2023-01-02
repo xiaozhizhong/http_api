@@ -40,10 +40,6 @@ abstract class TestApi {
   }
 }
 
-// _fromJson(dynamic map){
-//   return ResponseBody.fromJson(map);
-// }
-
 final testApi = TestApi();
 
 class RequestBody {

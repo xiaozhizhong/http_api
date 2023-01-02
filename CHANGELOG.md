@@ -11,3 +11,9 @@
 ## 1.0.3
 * Update to analyzer 5. 
 * Upload project to Github.
+
+## 1.1.0
+* Fix baseUrl;
+* Fix error of top-level fromJson function;
+* Add @BodyPart;
+* Add HttpOptions;

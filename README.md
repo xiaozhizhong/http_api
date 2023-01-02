@@ -54,6 +54,9 @@ bool formUrlEncoded;
 /// Type of response, as T
 Type responseType;
 
-/// From Json
+/// @FromJson
 FromJsonTransform<RESPONSE>? fromJson;
+
+/// @Options, contains headers, responseType, receiveTimeout, sendTimeout
+final HttpOptions? options;
 ```
