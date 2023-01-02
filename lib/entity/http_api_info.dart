@@ -1,3 +1,4 @@
+import 'package:http_api_generator/annotation/param.dart';
 import 'package:meta/meta.dart';
 
 ///
@@ -37,14 +38,45 @@ class HttpApi<@required RESPONSE> {
   /// From Json
   final FromJsonTransform<RESPONSE>? fromJson;
 
-  HttpApi(
-    this.method,
-    this.url, {
-    this.baseUrl,
-    this.formUrlEncoded = false,
-    this.body,
-    this.queryParams,
-    this.fields,
-    this.fromJson,
-  }) : responseType = RESPONSE;
+  /// Options, may be null
+  final HttpOptions? options;
+
+  HttpApi(this.method, this.url,
+      {this.baseUrl,
+      this.formUrlEncoded = false,
+      this.body,
+      this.queryParams,
+      this.fields,
+      this.fromJson,
+      this.options})
+      : responseType = RESPONSE;
+
+  @override
+  String toString() {
+    return 'HttpApi{method: $method, url: $url, baseUrl: $baseUrl, body: $body, queryParams: $queryParams, fields: $fields, formUrlEncoded: $formUrlEncoded, responseType: $responseType, fromJson: $fromJson, options: $options}';
+  }
+
+  HttpApi<RESPONSE> copyWith({
+    String? method,
+    String? url,
+    String? baseUrl,
+    bool? formUrlEncoded,
+    Object? body,
+    Map<String, dynamic>? queryParams,
+    Map<String, dynamic>? fields,
+    FromJsonTransform<RESPONSE>? fromJson,
+    HttpOptions? options,
+  }) {
+    return HttpApi<RESPONSE>(
+      method ?? this.method,
+      url ?? this.url,
+      baseUrl: baseUrl ?? this.baseUrl,
+      formUrlEncoded: formUrlEncoded ?? this.formUrlEncoded,
+      body: body ?? this.body,
+      queryParams: queryParams ?? this.queryParams,
+      fields: fields ?? this.fields,
+      fromJson: fromJson ?? this.fromJson,
+      options: options ?? this.options,
+    );
+  }
 }
