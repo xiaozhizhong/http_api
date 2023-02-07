@@ -17,3 +17,6 @@
 * Fix error of top-level fromJson function;
 * Add @BodyPart;
 * Add HttpOptions;
+
+## 1.1.1
+* Add connectTimeout to HttpOptions;

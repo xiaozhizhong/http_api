@@ -63,14 +63,16 @@ class FromJson {
 class HttpOptions {
   static const className = "HttpOptions";
   final HttpResponseType? responseType;
+  final int? connectTimeout;
   final int? sendTimeout;
   final int? receiveTimeout;
   final Map<String, dynamic>? headers;
 
-  const HttpOptions({this.responseType, this.sendTimeout, this.receiveTimeout, this.headers});
+  const HttpOptions({this.responseType, this.connectTimeout, this.sendTimeout, this.receiveTimeout, this.headers});
 
   HttpOptions.from({
     String? responseType,
+    this.connectTimeout,
     this.sendTimeout,
     this.receiveTimeout,
     this.headers,
@@ -78,7 +80,7 @@ class HttpOptions {
 
   @override
   String toString() {
-    return 'HttpOptions{responseType: $responseType, sendTimeout: $sendTimeout, receiveTimeout: $receiveTimeout, headers: $headers}';
+    return 'HttpOptions{responseType: $responseType, connectTimeout:$connectTimeout,sendTimeout: $sendTimeout, receiveTimeout: $receiveTimeout, headers: $headers}';
   }
 }
 

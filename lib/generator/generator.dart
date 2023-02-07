@@ -162,6 +162,7 @@ class HttpApiGenerator extends GeneratorForAnnotation<RestApi> {
 
   void _generateOptions(List<Code> blocks, DartObject options) {
     var responseType = options.getField("responseType")?.variable?.name;
+    var connectTimeout = options.getField("connectTimeout")?.toIntValue();
     var sendTimeout = options.getField("sendTimeout")?.toIntValue();
     var receiveTimeout = options.getField("receiveTimeout")?.toIntValue();
     var headers = options
@@ -171,6 +172,9 @@ class HttpApiGenerator extends GeneratorForAnnotation<RestApi> {
     var namedArguments = <String, Expression>{};
     if (responseType != null) {
       namedArguments.putIfAbsent("responseType", () => literalString(responseType));
+    }
+    if (connectTimeout != null) {
+      namedArguments.putIfAbsent("connectTimeout", () => literalNum(connectTimeout));
     }
     if (sendTimeout != null) {
       namedArguments.putIfAbsent("sendTimeout", () => literalNum(sendTimeout));
