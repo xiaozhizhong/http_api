@@ -20,3 +20,6 @@
 
 ## 1.1.1
 * Add connectTimeout to HttpOptions;
+
+## 1.1.2
+* Fix bug
